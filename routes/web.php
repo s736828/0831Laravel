@@ -16,22 +16,6 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-Route::get('/', function () {
-
-    $data = [
-        's1' => 'amy',
-        's2' => 'cat',
-        's3' => 'dog'
-    ];
-
-    // $data1=[
-    //     ['id'=>1,"name"=>'boot'],
-    //     ['id'=>2,"name"=>'cat'],
-    //     ['id'=>3,"name"=>'dog']
-    // ]
-
-    return view('front.hall')->with('data123', $data);
-});
 
 // Route::get('/f1', function () {
 //     return view('front.f1');
@@ -43,17 +27,30 @@ Route::get('/', function () {
 //     return view('front.f3');
 // });
 
+Route::get('/', function () {
 
-Route::get('/f1', function () {
+    $data = [
+        's1' => 'amy',
+        's2' => 'cat',
+        's3' => 'dog'
+    ];
+    return view('front.hall',['data123'=> $data]);
+    // return view('front.hall')->with('data123', $data);
+});
+
+
+Route::get('/xxx1', function () {
     return view('front.f1');
-})->name("aaa");
-Route::get('/f2', function () {
-    return view('front.f2');
-})->name("bbb");
+})->name("helloF1");
 
-Route::get('/f3', function () {
+Route::get('/隨便取f2', function () {
+    return view('front.f2');
+})->name("helloF2");
+
+Route::get('/亂打f3', function () {
     return view('front.f3');
-})->name("bbb");
+})->name("helloF3");
+
 
 Route::get('/test123', function () {
     return view('front.f3');
@@ -75,3 +72,7 @@ Route::get('/calculate', function () {
 Route::get('/jerry111', function () {
     return view('front.f3');
 })->name("abc");
+
+Route::get('/tt', function () {
+    return view('front.table');
+});
