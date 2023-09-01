@@ -34,7 +34,7 @@ Route::get('/', function () {
         's2' => 'cat',
         's3' => 'dog'
     ];
-    return view('front.hall',['data123'=> $data]);
+    return view('front.hall', ['data123' => $data]);
     // return view('front.hall')->with('data123', $data);
 });
 
@@ -43,11 +43,11 @@ Route::get('/xxx1', function () {
     return view('front.f1');
 })->name("helloF1");
 
-Route::get('/隨便取f2', function () {
+Route::get('/f2', function () {
     return view('front.f2');
 })->name("helloF2");
 
-Route::get('/亂打f3', function () {
+Route::get('/f3', function () {
     return view('front.f3');
 })->name("helloF3");
 
@@ -69,10 +69,25 @@ Route::get('/calculate', function () {
 })->name("calculate");
 
 
-Route::get('/jerry111', function () {
-    return view('front.f3');
-})->name("abc");
 
-Route::get('/tt', function () {
-    return view('front.table');
-});
+
+Route::get('/table123', function () {
+    $data22 = [
+        [
+            'id' => 1,
+            'name' => 'dog',
+            'mobile' => '0955-555-555'
+        ],
+        [
+            'id' => 2,
+            'name' => 'cat',
+            'mobile' => '0966-666-666',
+        ],
+        [
+            'id' => 3,
+            'name' => 'rabbit',
+            'mobile' => '0977-777-777'
+        ]
+    ];
+    return view('front.table')->with('data1', $data22);
+})->name('table');
